@@ -27,8 +27,8 @@ const [recipes, setRecipes]= useState(
   {
     id: "47fb78ff-0167-4fd7-a6bb-c44e768e9e5",
     name: "Mix de Vegetais",
-    ingredients: [],
-    cooking: [],
+    ingredients: ["4 tomates", "2 cenouras", "2 pepinos"],
+    cooking: ["picar todos os vegetais", "por sal e vinagre a gosto", "levar a geladeira por 3 horas"],
     description: "Receita refrescante e cheia de vitaminas para seu café da manhã.",
     imgUrl: "https://i.postimg.cc/5tZZnLSJ/mix-de-vegetais.jpg"
   }
