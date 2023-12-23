@@ -5,7 +5,8 @@ export const HeaderNavbarContainer = styled.header`
   align-items: center;
   background: #f9f9f9;
   display: flex;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: space-around;
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -36,5 +37,8 @@ export const HeaderNavbarContainer = styled.header`
   margin-right: 0;
 }
 
+.logo{
+  width: 80px;
 
+}
 `

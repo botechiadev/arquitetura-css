@@ -35,6 +35,7 @@ article{
     justify-content: space-around;
 }
 .article__instructions-box{
+    display: inline-block;
     width:40%;
     min-width: 200px;
 }
@@ -59,5 +60,16 @@ ul, ol{
     color: white;
     font-weight: bolder;
     margin: 30px;
+}
+table{
+    margin: 30px auto;
+}
+table , tr, td{
+    border: 2px solid black;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 200px;
+    text-align: left;
+    border-collapse: collapse;  
 }
 `

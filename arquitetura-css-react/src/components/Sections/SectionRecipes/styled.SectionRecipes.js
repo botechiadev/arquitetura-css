@@ -8,7 +8,7 @@ export const SectionRecipesContainer = styled.section`
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  
+  gap: 100px;
 }
 
 `
