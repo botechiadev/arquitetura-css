@@ -5,7 +5,7 @@ import { ModalRecipesContainer } from "./styled.ModalRecipes"
 
 
 export default function ModalRecipes({recipe, closeModal}) {
-    const {id, name, description, cooking, ingredients, imgUrl} = recipe
+    const {id, title, description, cooking, ingredients, imgUrl} = recipe
   
   
   
@@ -41,7 +41,7 @@ export default function ModalRecipes({recipe, closeModal}) {
   <ModalRecipesContainer>
         <article>
             <button className="buttonCircle" onClick={closeModal}>X</button>
-            <h2>{name}</h2>
+            <h2>{title}</h2>
             <div className="article-content">
             <div className="article__instructions-box">
             <div>

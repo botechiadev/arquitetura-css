@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const CardRecipesContainer = styled.article`
+export const CardProductsContainer = styled.article`
 
   background: #fdfdfd;
   display: flex;
   flex-flow: column wrap;
  margin: 30px auto;
   width: calc(25% - 5rem);
-  min-width: 320px;
+  min-width: 270px;
 align-self: center;
 .receita__conteudo {
   padding: 1rem;
@@ -17,6 +17,9 @@ align-self: center;
 }
 .receita__imagem {
   height: 200px;
+  width: 100%;
+  margin:auto;
+  object-fit: contain;
 }
 .receita__descricao {
   font-size: 1.1875rem;
@@ -33,7 +36,18 @@ align-self: center;
 }
 
 .receita__botao:hover {
-  background:#EB54B3;
+  background: #620404;
   cursor: pointer;
+}
+
+.badge1{
+  display:block;
+  margin: 20px ;
+  background-color: transparent;
+  color:  #620404;
+  padding: 6px;
+  border: 2px solid  #620404;
+  text-transform: uppercase;
+  text-align: right;
 }
 `

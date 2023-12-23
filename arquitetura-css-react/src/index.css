@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="text"] {
+    border-radius: 6px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+    min-width: 273px;
+    width: 90%;
+    margin: 20px auto;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.filterBox {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+}
