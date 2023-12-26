@@ -152,6 +152,7 @@ export const Api1Provider = ({ children }) => {
       setProducts(inputFilter);
     }
   };
+
   return (
     <Api1Context.Provider value={{
        products, 

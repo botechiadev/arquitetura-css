@@ -4,15 +4,17 @@
     margin: 0;
 }
 
-input[type="text"] {
+input, select, option {
     border-radius: 6px;
     border: 1px solid #D6D6D6;
     background: #FFF;
-    min-width: 273px;
-    width: 90%;
-    margin: 20px auto;
+/*width: 273px;
+    min-width: 85%*/;
+    min-width: 90%;
+    margin: 20px 5%;
     height: 40px;
     flex-shrink: 0;
+    text-align: center;
 }
 
 .filterBox {

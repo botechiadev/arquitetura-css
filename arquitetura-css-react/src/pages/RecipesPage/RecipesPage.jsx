@@ -75,6 +75,7 @@ export function RecipesPage() {
                       <button onClick={() => openModal(item)}>
                         <CgEye /> Receita
                       </button>
+                      
                     </div>
                   </div>
                 </div>

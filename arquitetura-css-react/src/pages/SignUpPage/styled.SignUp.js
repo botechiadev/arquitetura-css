@@ -6,4 +6,9 @@ display: grid;
 max-width: 1fr;
 padding: 80px auto;
 min-height: 70vh;
+@media screen and (max-width:  420px){
+height:  auto;
+min-height: auto;
+margin-bottom: 120px;
+}
 `

@@ -8,20 +8,13 @@ import {handleHome} from './../../router/coordinator'
 import { PiPlusCircleDuotone } from "react-icons/pi";
 import  EmptyCart  from "../../components/EmptyCart/EmptyCart";
 export default function CartPage() {
-  const {  products, 
-    setProducts, 
-    recipes, 
-    setRecipes, 
+  const {  
     cart, 
-    setCart, 
-    addCart, 
+
     removeItem, 
     emptyCart, 
     deleteOneUnit,
-    dataProducts,
-    isLoadingsDataProducts,
-    isErrorDataProducts,
-    handleOnChangeInput,
+
     addPlus1
   } = useContext(Api1Context)
   
@@ -48,7 +41,11 @@ const navigate= useNavigate()
               {cartItem.quantity}{cartItem.description}<button onClick={()=>{addPlus1(cartItem)}}><PiPlusCircleDuotone />
 </button></td>
             <td>{cartItem.price * cartItem.quantity}</td>
-            <td><button onClick={()=>{removeItem(cartItem.id)}}><BsFillTrash3Fill /></button></td>
+            <td>
+              <button className="deleteItem" onClick={()=>{removeItem(cartItem.id)}}>
+                <BsFillTrash3Fill />
+                </button>
+            </td>
           </tr>
         ))}
       </tbody>

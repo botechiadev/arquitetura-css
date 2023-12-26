@@ -12,12 +12,23 @@ padding-bottom: 40px;
 
 @media screen and (max-width: 768px) {
     grid-template-columns: 100%;
-    grid-template-rows: 200px auto;
+    grid-template-rows: 400px auto;
 
 }
 aside{
 
-    background: black;
+   background :#E2F788;
     height: 100%;
+    color: gray;
+    text-align: center;
+}
+
+#inputName, aside select, aside select   option{
+    width: 80%;
+    max-width: 120px;
+    margin-right:   10%;
+    border-radius: 22px;
+    text-align:center;
+    hesight: 30px;
 }
 `

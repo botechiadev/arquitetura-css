@@ -17,38 +17,12 @@ const [searchName, setSearchName]= useState("")
 const [categorySelect, setCategorySelect]= useState("")
   const {
     products, 
-    setProducts, 
-    recipes, 
-    setRecipes, 
-    cart, 
-    setCart, 
-    addCart, 
-    removeItem, 
-    emptyCart, 
-    deleteOneUnit,
     isLoadingsDataProducts,
     isErrorDataProducts,
     handleOnChangeInput } =  useContext(Api1Context)
 
 
-  const [users, setUsers] = useState([
-    {
-      id: 'u001',
-      fullName: 'Fernando Herrera',
-      nickname: '@fernando-herrera',
-      email: 'fernandoherrera@gmail.com',
-      password: 'MyPass!2',
-      avatar: 'https://i.postimg.cc/3N17hLCX/orange-Logo-removebg-preview-2.png',
-    },
-    {
-      id: 'u002',
-      fullName: 'Fernando Herrera',
-      nickname: '@fernando-herrera',
-      email: 'fernandoherrera@gmail.com',
-      password: 'MyPass!2',
-      avatar: 'https://i.postimg.cc/3N17hLCX/orange-Logo-removebg-preview-2.png',
-    },
-  ]);
+
 
 
   return (
@@ -135,12 +109,6 @@ const [categorySelect, setCategorySelect]= useState("")
             <h2>Nenhum produto encontrado</h2>}
         </SectionRecipes>
 
-        <SectionPersons>
-          {/* Utilize users[0] para acessar o array de usuários */}
-          {users.map((user) => (
-            <CardPersons key={user.id} user={user} />
-          ))}
-        </SectionPersons>
       </HomeContainer>
     </>
   );
