@@ -41,4 +41,12 @@ export const HeaderNavbarContainer = styled.header`
   width: 80px;
 
 }
+
+button{
+  padding: 0.625rem 1.25rem !important;
+  border-radius:22px;
+  border: none;
+  text-decoration: none;
+  background-color:#E2F788;
+}
 `

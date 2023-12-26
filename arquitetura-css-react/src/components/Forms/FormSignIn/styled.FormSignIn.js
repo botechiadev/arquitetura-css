@@ -98,4 +98,23 @@ border-radius:22px;
   background-color: gold;
   color: black;
 }
+input[type="text"] {
+  border-radius: 6px;
+  border: 1px solid #D6D6D6;
+  background: #FFF;
+width: 273px;
+  min-width: 89%;
+  min-width: 90%;
+  margin: 20px 5%;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+p{
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+  align-self: center;
+}
+
 `

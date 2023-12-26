@@ -4,8 +4,10 @@ import logo from './../../assets/img/logo.png'
 import { handleCart, handleHome, handleRecipes, handleSignIn } from '../../router/coordinator'
 import { useNavigate } from 'react-router-dom'
 export default function HeaderNavbar() {
-
   const navigate = useNavigate()
+  
+
+
   return (
     <>
     <HeaderNavbarContainer> <header className="cabecalho">

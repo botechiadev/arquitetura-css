@@ -10,6 +10,8 @@ background: #E3F988;
 border-radius: 22px;
 
 
+
+
 h2{
   color: black;
   margin: 30px auto;
@@ -37,7 +39,8 @@ form{
 input{
   height: 33px;
   border-radius: 22px;
-  min-width: 300px;
+  width: 43%;
+  min-width: 150px;
   height: 44.171px;
   flex-shrink: 0;
   margin: 20px auto;
@@ -48,7 +51,6 @@ input{
 
 button{
   display: flex;
-width: 169px;
 height: 52px;
 padding: 10.326px 21.685px;
 justify-content: space-between;
@@ -72,4 +74,33 @@ button:hover{
   background: #7FB519;
   color: black;
 }
+
+@media screen and (max-width: 420px){
+  position: relative;
+width: 90%;
+height: 100%;
+bottom: 120px;
+
+  input{
+    width: 80%;
+    margin: 30px auto;
+  }
+}
+
+p{
+  width: 100%;
+  text-align: center;
+  margin:  auto;
+  align-self: center;
+}
+
+.resetBtn{
+  background: red;
+}
+
+.resetBtn:hover{
+  background: darkred;
+  color: white;
+}
+
 `
