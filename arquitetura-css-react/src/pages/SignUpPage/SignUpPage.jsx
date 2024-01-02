@@ -1,4 +1,4 @@
-import FormRegister from "../../components/Forms/FormRegister/FormRegister"
+import {FormRegister} from "../../components/Forms/FormRegister/FormRegister"
 import {SignUpContainer } from "./styled.SignUp"
 export function SignUpPage(){
     return(

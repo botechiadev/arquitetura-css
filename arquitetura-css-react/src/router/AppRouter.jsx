@@ -6,6 +6,7 @@ import { RecipesPage } from "../pages/RecipesPage/RecipesPage";
 import HeaderNavbar from '../components/HeaderNavbar/HeaderNavbar'
 import CartPage from '../pages/CartPage/CartPage';
 import { AdminPage } from '../pages/AdminPage/AdminPage';
+import ClubPage from '../pages/ClubPage';
 
 export default function AppRouter() {
   return (
@@ -18,6 +19,7 @@ export default function AppRouter() {
         <Route path="/recipes" element={<RecipesPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
+        <Route path="/club" element={<ClubPage/>}/>
     </Routes>
     </>
     )

@@ -1,12 +1,12 @@
-import{ useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FormRegisterContainer } from './styled.FormRegister';
 import { URLAPI } from '../../../common/constants/URLAPI';
 import { useForm } from '../../../hooks/useForm';
 import { UserMessage } from '../../Message/UserMesssage/UserMessage';
 
-export default function FormRegister() {
-  const [users, setUsers] = useState([]);
+export  function FormRegister() {
+  const [users, setUsers] = useState([]); // Ensure that users is initialized as an array
   const [viewMessage, setViewMessage] = useState(0);
 
   // Utilizando o hook personalizado useForm para gerenciar o estado do formulário
@@ -40,7 +40,7 @@ export default function FormRegister() {
         },
       });
 
-      alert('Usuario cadsastrado com sucsessso');
+      alert('Usuário cadastrado com sucesso');
       console.log(response.data);
       // Limpar o formulário após o envio bem-sucedido
       handleResetForm();
@@ -50,11 +50,20 @@ export default function FormRegister() {
   };
 
   useEffect(() => {
-    // Verificar se há usuários com o mesmo ID
-    const userWithSameId = users.find((user) => user.id === inputCpfCnpj);
-    setViewMessage(userWithSameId ? 2 : 0);
-  }, [inputCpfCnpj, users]);
+    // Atualizar a lista de usuários ao montar o componente
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get(`${URLAPI}users`); // Use axios.get instead of fetch
+        setUsers(response.data.result);
+      } catch (error) {
+        console.error('Erro ao buscar usuários', error);
+      }
+    };
 
+    fetchUsers();
+  }, []);
+
+/*
   useEffect(() => {
     // Verificar se há usuários com o mesmo nome completo
     const userWithSameFullName = users.find((user) => user.fullName === inputFullName);
@@ -63,7 +72,7 @@ export default function FormRegister() {
 
   useEffect(() => {
     // Verificar se há usuários com o mesmo nickname
-    const nicknameIn = '@' + inputNickname;
+    const nicknameIn = inputNickname;
     const userWithSameNickname = users.find((user) => user.nickname === nicknameIn);
     setViewMessage(userWithSameNickname ? 2 : 0);
   }, [inputNickname, users]);
@@ -78,22 +87,7 @@ export default function FormRegister() {
 
   useEffect(() => {
     console.log('useEffect called for inputPassword');
-  }, [inputPassword]);
-
-  useEffect(() => {
-    // Atualizar a lista de usuários ao montar o componente
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch(`${URLAPI}users`);
-        const data = await response.json();
-        setUsers(data.result);
-      } catch (error) {
-        console.error('Erro ao buscar usuários', error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
+  }, [inputPassword]);*/
 
   return (
     <FormRegisterContainer>
@@ -156,7 +150,7 @@ export default function FormRegister() {
           Cadastrar
         </button>
         <button type="reset" className='resetBtn' onClick={handleResetForm}>
-         RESETEAR DADOS
+          RESETEAR DADOS
         </button>
       </form>
     </FormRegisterContainer>
