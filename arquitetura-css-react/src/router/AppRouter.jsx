@@ -7,11 +7,13 @@ import HeaderNavbar from '../components/HeaderNavbar/HeaderNavbar'
 import CartPage from '../pages/CartPage/CartPage';
 import { AdminPage } from '../pages/AdminPage/AdminPage';
 import ClubPage from '../pages/ClubPage';
-
+import { PurchaseProvider } from '../common/context/api3-context';
 export default function AppRouter() {
   return (
     <>
    <HeaderNavbar/> 
+   <PurchaseProvider>
+
    <Routes>     
         <Route path="/" element={<HomePage/>}/>
         <Route path="/sign-in" element={<SignInPage/>}/>
@@ -19,8 +21,9 @@ export default function AppRouter() {
         <Route path="/recipes" element={<RecipesPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
-        <Route path="/club" element={<ClubPage/>}/>
-    </Routes>
+        <Route path="/club/:nickname" element={<ClubPage/>}/>
+
+    </Routes>        </PurchaseProvider>
     </>
     )
 }

@@ -38,4 +38,11 @@ aside button svg{
 }
 }
 
+.section1{
+   padding-top: 110px;
+   padding-left: 80px;
+   color: black;
+   font-size: 6rem;
+}
+
 `

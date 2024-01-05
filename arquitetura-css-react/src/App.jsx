@@ -8,12 +8,14 @@ function App() {
 
   return (
     <>
-        <Api2Provider>
-    <Api1Provider>
+      <Api1Provider>
+      <Api2Provider>
+
       <Router/>
       <Footer />
-      </Api1Provider>
+
       </Api2Provider>
+      </Api1Provider>
     </>
   );
 }
