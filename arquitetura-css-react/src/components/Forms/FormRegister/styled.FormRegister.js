@@ -6,9 +6,6 @@ top:  100px;
 bottom: 200px;
 left: 100px; 
 right: 100px;
-background: #E3F988;
-border-radius: 22px;
-
 
 
 

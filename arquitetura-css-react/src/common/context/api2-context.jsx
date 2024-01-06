@@ -9,12 +9,12 @@ export const Api2Provider = ({ children }) => {
 
   const [users, setUsers] = useState(usersData);
 
-  const listNames = (inputFullName) => {
-    return users.filter((user) => user.name.toUpperCase() === inputFullName.toUpperCase());
+  const listNames = (fullName) => {
+    return users.filter((user) => user.name.toUpperCase() === fullName.toUpperCase());
   };
 
-  const listCpfCnpj = (inputCpfCnpj) => {
-    const index = users.findIndex((user) => user.id === inputCpfCnpj);
+  const listCpfCnpj = (id) => {
+    const index = users.findIndex((user) => user.id === id);
 
     if (index !== -1) {
       return users[index].id;

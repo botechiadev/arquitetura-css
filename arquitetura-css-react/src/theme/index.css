@@ -2,8 +2,13 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
 }
 
+
+body{
+    overflow-x: hidden;
+}
 input, select, option {
     border-radius: 6px;
     border: 1px solid #D6D6D6;
@@ -22,3 +27,5 @@ input, select, option {
     flex-flow: row wrap;
     width: 90%;
 }
+
+

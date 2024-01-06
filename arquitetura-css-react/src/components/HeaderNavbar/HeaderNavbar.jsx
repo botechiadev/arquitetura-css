@@ -1,7 +1,7 @@
 import { FaOpencart } from "react-icons/fa";
 import { HeaderNavbarContainer } from './styled.HeaderNavbar'
 import logo from './../../assets/img/logo.png'
-import { handleCart, handleHome, handleRecipes, handleSignIn } from '../../router/coordinator'
+import { handleCart, handleHome, handleSignIn } from '../../router/coordinator'
 import { useNavigate } from 'react-router-dom'
 export default function HeaderNavbar() {
   const navigate = useNavigate()
@@ -17,9 +17,6 @@ export default function HeaderNavbar() {
                     <li className="menu__item">
                       <button className="menu__link ativo" onClick={()=>{handleHome(navigate)}}>Mercadinho</button>
                       </li>
-                    <li className="menu__item">
-                    <button className="menu__link ativo" onClick={()=>{handleRecipes(navigate)}}>Receitas</button>  
-                    </li>
                     <li className="menu__item">
                     <button className="menu__link ativo" onClick={()=>{handleSignIn(navigate)}}>Club</button>  </li>
                     <li className="menu__item">

@@ -7,7 +7,7 @@ import { Api1Context } from '../../../common/context/api1-context';
 export default  function CardProducts({ product }) {
   const [view, setView] = useState(0);
  const {addCart} = useContext(Api1Context)
-  const { id, item: name, description, image_url, price , category} = product;
+  const { id, item: name, description, imageUrl, price , category} = product;
 
   function openAlert() {
     Swal.fire({
@@ -24,7 +24,7 @@ export default  function CardProducts({ product }) {
         <CardProductsContainer>
           <article className="receita">
             <span className="badge1">{category}</span>
-            <img alt={`Img da Receita ${name}`} className="receita__imagem" src={image_url} />
+            <img alt={`Img da Receita ${name}`} className="receita__imagem" src={imageUrl} />
             <div className="receita__conteudo">
               <h4 className="receita__titulo">{name}</h4>
               <p className="receita__descricao">R${price} ({description})</p>

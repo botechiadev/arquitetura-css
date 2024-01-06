@@ -152,7 +152,14 @@ export const Api1Provider = ({ children }) => {
       setProducts(inputFilter);
     }
   };
+  const getCartTotal = () => {
+    // Calcula o total do carrinho somando a quantidade multiplicada pelo preço de cada item
+    const total = cart.reduce((acc, item) => {
+      return acc + item.quantity * item.price;
+    }, 0);
 
+    return total.toFixed(2); // Arredonda para duas casas decimais
+  };
   return (
     <Api1Context.Provider value={{
        products, 
@@ -169,6 +176,7 @@ export const Api1Provider = ({ children }) => {
        dataProducts,
        isLoadingsDataProducts,
        isErrorDataProducts,
+       getCartTotal,
        handleOnChangeInput }}>
       {children}
     </Api1Context.Provider>
