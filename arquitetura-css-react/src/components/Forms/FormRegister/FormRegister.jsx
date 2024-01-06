@@ -4,10 +4,14 @@ import { FormRegisterContainer } from './styled.FormRegister';
 import { URLAPI } from '../../../common/constants/URLAPI';
 import { useForm } from '../../../hooks/useForm';
 import { UserMessage } from '../../Message/UserMesssage/UserMessage';
+import { handleClub } from '../../../router/coordinator';
+import { useNavigate } from 'react-router-dom';
 
 export  function FormRegister() {
+  const navigate = useNavigate()
   const [users, setUsers] = useState([]); // Ensure that users is initialized as an array
   const [viewMessage, setViewMessage] = useState(0);
+
 
   // Utilizando o hook personalizado useForm para gerenciar o estado do formulário
   const { formState, handleInputChange, handleResetForm } = useForm({
@@ -39,12 +43,8 @@ export  function FormRegister() {
           Authorization: 'botechia-erika',
         },
       });
-
-      alert('Usuário cadastrado com sucesso');
-      console.log(response.data);
-      alert('Usuario Cadastrado com Sucesso')
-      // Limpar o formulário após o envio bem-sucedido
-      handleResetForm();
+      localStorage.setItem('token', response.data.token)
+      handleClub(navigate)
     } catch (error) {
       console.log(error.response);
     }

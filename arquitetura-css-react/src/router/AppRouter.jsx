@@ -21,7 +21,7 @@ export default function AppRouter() {
         <Route path="/recipes" element={<RecipesPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
-        <Route path="/club/:nickname" element={<ClubPage/>}/>
+        <Route path="/club" element={<ClubPage/>}/>
 
     </Routes>        </PurchaseProvider>
     </>

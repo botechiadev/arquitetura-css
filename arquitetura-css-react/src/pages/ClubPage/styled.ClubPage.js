@@ -42,7 +42,45 @@ aside button svg{
    padding-top: 110px;
    padding-left: 80px;
    color: black;
-   font-size: 6rem;
+   font-size: 1rem;
+}
+
+
+
+.section1 article{
+  
+   height: auto;
+ width: 95%;
+   background: #E2F788;
+   border-radius: 22px;
+   box-shadow: 2px groove gainsbro;
+   margin: auto;
+}
+
+.header__article{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around ;
+   align-items: center;
+}
+
+
+.header__avatar img{
+   width: 60px;
+   height: 60px;
+object-fit: cover;
+   border-radius: 50%;
+}
+
+
+.box__article{
+ padding: 1rem;
+ background-color: #efefef;
+ margin: auto;
+ min-height: 200px;
+ display: flex;
+ flex-flow: column wrap;
+ 
 }
 
 `

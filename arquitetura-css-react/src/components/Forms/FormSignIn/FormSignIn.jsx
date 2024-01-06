@@ -2,9 +2,10 @@ import { useContext, useState } from 'react';
 import { PurchaseContext } from '../../../common/context/api3-context';
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { FormSignInContainer } from './styled.FormSignIn';
-import { handleSignUp } from './../../../router/coordinator';
+import { handleClub, handleSignUp } from './../../../router/coordinator';
 import { useNavigate } from 'react-router-dom';
-
+import { URLAPI } from '../../../common/constants/URLAPI';
+import axios from 'axios';
 export default function FormSignIn() {
   const { logUser } = useContext(PurchaseContext);
   const [inputPassword, setInputPassword] = useState('');
@@ -14,17 +15,24 @@ export default function FormSignIn() {
   const handleSignIn = (e) => {
     e.preventDefault();
 
-    const userLogin = {
+    const body = {
       nickname: inputNickname,
       password: inputPassword,
     };
 
-    logUser(userLogin);
+    axios.post((`${URLAPI}auth`), body )
+
+    .then((res)=>{
+      localStorage.setItem('token', res.data.token)
+      handleClub(navigate)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   };
 
-  const handleSignUpNavigation = () => {
-    handleSignUp(navigate);
-  };
+
+  
 
   return (
     <FormSignInContainer>
@@ -55,11 +63,11 @@ export default function FormSignIn() {
             }}
           />
           <div className="button__flex">
-            <button type="submit">
+            <button type="submit" onClick={handleSignIn}>
               Loguear <FaSignInAlt />
             </button>
 
-            <button className="button__signUp" onClick={handleSignUpNavigation}>
+            <button className="button__signUp" onClick={()=>{handleSignUp(navigate)}}>
               Cadastrar <FaUserPlus />
             </button>
           </div>
