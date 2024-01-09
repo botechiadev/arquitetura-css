@@ -28,3 +28,6 @@ export function handleSignUp (navigate){
 export function handleCart(navigate){
     navigate('/cart ')
 }
+export function handlePurchases(navigate, id){
+    navigate(`/purchases/${id}`)
+}

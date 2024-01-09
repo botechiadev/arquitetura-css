@@ -8,6 +8,7 @@ import CartPage from '../pages/CartPage/CartPage';
 import { AdminPage } from '../pages/AdminPage/AdminPage';
 import ClubPage from '../pages/ClubPage';
 import { PurchaseProvider } from '../common/context/api3-context';
+import PurchasesPage from '../pages/PurchasesPage';
 export default function AppRouter() {
   return (
     <>
@@ -22,7 +23,7 @@ export default function AppRouter() {
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/club" element={<ClubPage/>}/>
-
+      <Route path="/purchases/:id" element={<PurchasesPage/>}/>
     </Routes>        </PurchaseProvider>
     </>
     )
