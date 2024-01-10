@@ -8,9 +8,10 @@ import axios from 'axios';
 import { URLAPI } from '../../common/constants/URLAPI';
 import HomeProfile from '../../components/HomeProfile';
 import {useRequestData} from '../../hooks/useRequestData'
-import { handlePurchases } from '../../router/coordinator';
+import { handlePurchases , handleScore, handleGifts} from '../../router/coordinator';
 import { useNavigate } from 'react-router-dom';
 import PurchasesPage from '../PurchasesPage/PurchasesPage';
+import NavClub from '../../components/NavClub/NavClub';
 export default function ClubPage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,31 +43,7 @@ export default function ClubPage() {
 
 return(
     <ContainerClubPage>
-      <aside>
-        <div>
-          <h2>{user && user.nickname}</h2>
-        </div>
-        <button>
-          <span>PERFIL</span>
-          <FaUserCircle />
-        </button>
-        <button>
-          <span>PONTOS</span>
-          <BsFillBookmarkCheckFill />
-        </button>
-        <button
- onClick={()=>{handlePurchases(navigate, user.id)}}>         <span>COMPRAS</span>
-          <FaOpencart />
-        </button>
-        <button>
-          <span>PREMIOS</span>
-          <BsTrophy />
-        </button>
-        <button>
-          <span>DADOS</span>
-          <FaUserCog />
-        </button>
-      </aside>
+      <NavClub/>
       <section className='section1'>
           <HomeProfile
             user={user}

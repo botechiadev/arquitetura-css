@@ -10,8 +10,8 @@ export function handleHome (navigate){
     navigate('/')
 }
 
-export function handleRecipes (navigate){
-    navigate('/recipes')
+export function handleGifts (navigate){
+    navigate('/gifts')
 }
 
 
@@ -28,6 +28,10 @@ export function handleSignUp (navigate){
 export function handleCart(navigate){
     navigate('/cart ')
 }
-export function handlePurchases(navigate, id){
-    navigate(`/purchases/${id}`)
+export function handlePurchases(navigate){
+    navigate(`/purchases`)
+}
+
+export function handleScore(navigate){
+    navigate(`/score`)
 }

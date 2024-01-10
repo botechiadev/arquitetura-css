@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { RecipesContainer } from "./styled.Recipes";
+import {GiftsContainer } from "./styled.GiftsPage";
 import { TbShoppingBagPlus } from "react-icons/tb";
 import { CgEye } from "react-icons/cg";
 
-import ModalRecipes from './../../components/Modal/ModalRecipes/ModalRecipes';
+import ModalRecipes from '../../components/Modal/ModalRecipes/ModalRecipes';
 
-export function RecipesPage() {
+export function GiftsPage() {
   const [items, setItems] = useState([]);
   const [viewRecipes, setViewRecipes] = useState(1);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -26,7 +26,7 @@ export function RecipesPage() {
     const currentItems = items.slice(startIndex, endIndex)
 
   const fetchData = async () => {
-    fetch('http://localhost:3000/api/recipes')
+    fetch('http://localhost:3001/api/premios')
       .then(response => response.json())
       .then(data => setItems(data.result));
   };
@@ -46,10 +46,11 @@ export function RecipesPage() {
   };
 
   return (
-    <RecipesContainer>
+    <GiftsContainer>
    {console.log(pages)}    <aside>
         <div className="aside__box">
-          <h2>RECEITAS</h2>
+          <h2>PREMIOS DISPONIVEIS</h2>
+          <p>Para realizar a troca compareca presencialmente a nossas Lojas</p>
           <select value={itemsPerPage} onClick={(e)=>{setItemsPerPage(Number(e.target.value))}}>
                 <option value={6}>6 items</option>
                 <option value={9}>9 items</option>
@@ -57,6 +58,11 @@ export function RecipesPage() {
                 <option value={24}>24 items</option>
             </select>
         </div>
+
+{Array.from(Array(pages), (item, index)=>{
+return  (<button value={index}
+onClick={(e)=>{setCurrentPage(Number(e.target.value))}}>{index+1}</button>
+)})}
       </aside>
       <section>
         <ul>
@@ -69,11 +75,8 @@ export function RecipesPage() {
                   <div>
                     <p>{item.description}</p>
                     <div className="flex">
-                      <button>
-                        <TbShoppingBagPlus /> Ingredientes
-                      </button>
                       <button onClick={() => openModal(item)}>
-                        <CgEye /> Receita
+                        <CgEye />Requisitos
                       </button>
                       
                     </div>
@@ -90,12 +93,8 @@ export function RecipesPage() {
 
 
 
-{Array.from(Array(pages), (item, index)=>{
-return  (<button value={index}
-onClick={(e)=>{setCurrentPage(Number(e.target.value))}}>{index+1}</button>
-)})}
 </div>
       </section>
-    </RecipesContainer>
+    </GiftsContainer>
   );
 }

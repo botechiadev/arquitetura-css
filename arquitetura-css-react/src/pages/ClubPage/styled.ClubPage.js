@@ -7,43 +7,6 @@ min-height: 65vh;
 grid-template-columns: 120px auto;
 grid-template-rows: 100%;
 
-aside button {
-   display: block;
-background: none;
-border: 1px solid transparent;
-border-radius: 999px;
-padding: 0.51rem;
-margin: 30px auto;
-background-color: #E2F788;
-}
-
-@media screen and (max-width: 769px) {
-aside button span{
-   display: none;
-}
-
-aside button {
-   display: block;
-background: none;
-border: 1px solid transparent;
-border-radius: 999px;
-padding: 0.51rem;
-margin: 30px auto;
-background-color: #E2F788;
-}
-aside button svg{
- height: 40px;
- width: 40px;
- color: gray;
-}
-}
-
-.section1{
-   padding-top: 110px;
-   padding-left: 80px;
-   color: black;
-   font-size: 1rem;
-}
 
 
 

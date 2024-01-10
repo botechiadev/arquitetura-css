@@ -20,6 +20,21 @@ export function HomePage() {
     handleOnChangeInput
   } = useContext(Api1Context);
 
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  // calcula numero total dse items dividido por items por paagina e define o numero total de paginas do paggination
+  const pages = Math.ceil(products.length/itemsPerPage)
+
+// FATIAR array de 
+
+//paginaa atual * items per page da index de  primiero item
+    const startIndex = currentPage * itemsPerPage
+ // calcula ultimo item dsass paaginasss  
+    const endIndex = startIndex + itemsPerPage
+
+    const currentItems = products.slice(startIndex, endIndex)
+
   return (
     <>
       <Banner />
@@ -63,16 +78,27 @@ export function HomePage() {
               <option value="armazem">Armazem</option>
               <option value="limpeza">Limpeza</option>
               <option value="papelaria">Papelaria</option>
-              <option value="marmitex">Marmitex</option>
             </select>
-          </div>
+<select value={itemsPerPage} onChange={(e) => { setItemsPerPage(Number(e.target.value)) }}>
+    <option value={6}  selected="true">--ITEMS POR PAGINA--</option>
+    <option value={6}>6 items</option>
+    <option value={9}>9 items</option>
+    <option value={12}>12 items</option>
+</select>
+
+        </div>
+        <p>Paginas</p>
+          {Array.from(Array(pages), (item, index)=>{
+return  (<button value={index}
+onClick={(e)=>{setCurrentPage(Number(e.target.value))}} key={index}>{index+1}</button>
+)})}
         </aside>
 
         <SectionRecipes>
           {isLoadingsDataProducts && <Loader />}
           {isErrorDataProducts && <ErrorDisplay message="Erro ao carregar receitas" />}
           {!isErrorDataProducts && products &&
-            products
+            currentItems
               .filter((product) => {
                 if (minPrice && product.price > minPrice) {
                   return product;

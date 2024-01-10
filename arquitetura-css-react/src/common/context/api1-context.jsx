@@ -68,7 +68,7 @@ export const Api1Provider = ({ children }) => {
       if (result.isConfirmed) {
         const filteredCart = cart.filter((item) => item.id !== itemId);
         setCartAndLocalStorage(filteredCart);
-        Swal.fire('Removed!', 'Item removed from the cart.', 'success');
+        Swal.fire('ITEM DELETADO!', 'Seu item foi deletado com sucesso', 'success');
         setCart(filteredCart)
       }
     });
