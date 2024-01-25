@@ -91,6 +91,7 @@ export const Api1Provider = ({ children }) => {
       }
     });
   };
+  
 
   const deleteOneUnit = (itemId) => {
     const index = cart.findIndex((cartItem) => cartItem.id === itemId);
@@ -121,7 +122,17 @@ export const Api1Provider = ({ children }) => {
       }
     }
   };
+  useEffect(() => {
+    setProducts(dataProducts);
+  }, [dataProducts]);
 
+  useEffect(() => {
+    setRecipes(dataRecipes);
+  }, [dataRecipes]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   useEffect(() => {
     setProducts(dataProducts);
   }, [dataProducts]);
