@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const SignUpContainer = styled.main`
 display: grid;
 max-width: 1fr;
-padding: 80px auto;
+padding: 120px auto;
 min-height: 70vh;
 @media screen and (max-width:  420px){
 height:  auto;

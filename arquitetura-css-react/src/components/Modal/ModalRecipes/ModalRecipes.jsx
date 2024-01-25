@@ -12,13 +12,13 @@ export default function ModalRecipes({recipe, closeModal}) {
   const renderCooking = (cooking)=>{
     return(
         <>
-        <ol>
+        <ul>
         {cooking.map((cook, indice)=>(
             <li key={indice}>
                 {cook}
             </li>
         ))}
-        </ol>
+        </ul>
         </>
     )
   }
@@ -49,7 +49,7 @@ export default function ModalRecipes({recipe, closeModal}) {
             {renderIngredients(ingredients)}
             </div>
             <div>
-            <h3>MODO DE FAZER</h3>
+            <h3>SCORE NECESSARIO:</h3>
           {renderCooking(cooking)}
             </div>
             </div>

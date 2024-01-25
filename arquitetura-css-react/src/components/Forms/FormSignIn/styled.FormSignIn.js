@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FormSignInContainer= styled.main`
 position: fixed;
-top:  120px;
+top:  180px;
 bottom: 200px;
 left: 100px; 
 right: 100px;
@@ -22,7 +22,7 @@ label{
   margin-top: 30px;
 }
 @media screen and (max-width: 520px){
-  top: 100px;
+  top: 190px;
   left: 5%;
   right: 5%;
 }

@@ -9,6 +9,7 @@ export const HeaderNavbarContainer = styled.header`
   justify-content: space-around;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .menu__lista {

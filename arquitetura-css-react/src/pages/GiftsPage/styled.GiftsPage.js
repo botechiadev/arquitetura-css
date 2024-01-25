@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const RecipesContainer = styled.main`
+export const GiftsContainer = styled.main`
 display: grid;
 max-width: 1fr;
 padding: 8px auto;
@@ -18,6 +18,8 @@ padding-bottom: 40px;
 aside{
     background: black;
     height: 100%;
+    color: whitesmoke;
+    padding: 1rem;
 }
 
 section >ul {
@@ -44,7 +46,7 @@ section >ul li img{
     width: 248px;
     height: 100px;
     background: var(--color);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 `

@@ -25,11 +25,13 @@ export  function FormRegister() {
   });
 
   const {
+    id,
     fullName,
     nickname,
     password,
     email,
-    id,
+    avatar,
+    role
   } = formState;
 
   const handleCreateUser = async (event) => {

@@ -4,6 +4,7 @@ import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import { FormSignInContainer } from './styled.FormSignIn';
 import { handleClub, handleSignUp } from './../../../router/coordinator';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { URLAPI } from '../../../common/constants/URLAPI';
 import axios from 'axios';
 export default function FormSignIn() {
@@ -12,7 +13,7 @@ export default function FormSignIn() {
   const [inputNickname, setInputNickname] = useState('');
   const navigate = useNavigate();
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
 
     const body = {
@@ -20,16 +21,21 @@ export default function FormSignIn() {
       password: inputPassword,
     };
 
-    axios.post((`${URLAPI}auth`), body )
+    try {
+      const response = await axios.post(`${URLAPI}auth`, body);
 
-    .then((res)=>{
-      localStorage.setItem('token', res.data.token)
-      handleClub(navigate)
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+      localStorage.setItem('token', response.data.token);
+      handleClub(navigate);
+    } catch (error) {
+      console.error('Login failed:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Login Falhou',
+        text: 'Usuário ou senha inválidos. Por favor, tente novamente.',
+      });
+    }
   };
+
 
 
   

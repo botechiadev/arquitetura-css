@@ -10,7 +10,7 @@ export  function Footer() {
                 <a href="https://github.com/botechiadev"><FaGithubSquare /></a>
             </li>
             <li>
-                <a href="https://linkedin.com/in/botechia-erikaluisa"><GrLinkedin /></a>
+                <a href="https://linkedin.com/in/botechia-erika"><GrLinkedin /></a>
             </li>
             <li>
                 <a href="mailto:botechiadev@gmail.com">botechiadev@gmail.com</a>
