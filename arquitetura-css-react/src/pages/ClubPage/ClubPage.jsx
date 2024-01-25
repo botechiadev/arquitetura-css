@@ -16,7 +16,6 @@ export default function ClubPage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
 
 
   useEffect(() => {

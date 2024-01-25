@@ -26,7 +26,7 @@ export function GiftsPage() {
     const currentItems = items.slice(startIndex, endIndex)
 
   const fetchData = async () => {
-    fetch('http://localhost:3001/api/premios')
+    fetch('https://simple-market-api.onrender.com/api/premios')
       .then(response => response.json())
       .then(data => setItems(data.result));
   };
