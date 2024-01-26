@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
-height: 125px;
+position: fixed;
+display: grid;
+max-width: 1fr;
+bottom: 0;
+left: 0;
+right: 0;
+height: 60px;
 background-color:gray;
 color: #efefef;
 font-family: 'Roboto', sans-serif;

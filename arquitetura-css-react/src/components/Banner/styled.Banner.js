@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 
 export const BannerContainer = styled.div`
+
 .banner {
   position: relative;
 }
@@ -16,6 +17,7 @@ export const BannerContainer = styled.div`
   text-align: center;
   transform: translate(-50%, -50%);
   width: 100%;
+
 }
 
 .banner__titulo-green{

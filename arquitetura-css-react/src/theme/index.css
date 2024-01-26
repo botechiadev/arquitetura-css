@@ -8,6 +8,7 @@
 
 body{
     overflow-x: hidden;
+    background: #E2F788;
 }
 input, select, option {
     border-radius: 6px;
